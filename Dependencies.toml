@@ -5,7 +5,7 @@
 
 [ballerina]
 dependencies-toml-version = "2"
-distribution-version = "2201.13.3"
+distribution-version = "2201.13.1"
 
 [[package]]
 org = "ballerina"
@@ -69,6 +69,20 @@ dependencies = [
 
 [[package]]
 org = "ballerina"
+name = "log"
+version = "2.17.0"
+dependencies = [
+	{org = "ballerina", name = "io"},
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "lang.value"},
+	{org = "ballerina", name = "observe"}
+]
+modules = [
+	{org = "ballerina", packageName = "log", moduleName = "log"}
+]
+
+[[package]]
+org = "ballerina"
 name = "observe"
 version = "1.7.1"
 dependencies = [
@@ -113,14 +127,29 @@ modules = [
 ]
 
 [[package]]
+org = "ballerinax"
+name = "choreo"
+version = "0.4.12"
+dependencies = [
+	{org = "ballerina", name = "io"},
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "observe"}
+]
+modules = [
+	{org = "ballerinax", packageName = "choreo", moduleName = "choreo"}
+]
+
+[[package]]
 org = "testorg"
 name = "sticky_repro"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "io"},
+	{org = "ballerina", name = "log"},
 	{org = "ballerina", name = "test"},
 	{org = "ballerina", name = "time"},
-	{org = "ballerinai", name = "observe"}
+	{org = "ballerinai", name = "observe"},
+	{org = "ballerinax", name = "choreo"}
 ]
 modules = [
 	{org = "testorg", packageName = "sticky_repro", moduleName = "sticky_repro"}
